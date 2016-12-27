@@ -11,7 +11,7 @@ var localOptions = {
 	usernameField: 'email'
 }
 //create local strategy
-var localLogin = new LocalStrategy(localOptions, function(email, password, done){
+var localLogin = new LocalStrategy(localOptions, function(email, password, done){	
 	//verify username and password. 
 	User.findOne({email: email}, function(error, user){
 		//DB error

@@ -11,9 +11,8 @@ function getToken(user){
 }
 
 
-exports.signup = function(request, response, next){
-
-	var {email, password} = request.body;
+exports.signup = function(request, response, next){	
+	var {email, password} = request.body;	
 	
 	if(!email || !password)
 		response.status(422).json({error: 'You must provide email and password'});
@@ -49,7 +48,6 @@ exports.signup = function(request, response, next){
 exports.signin = function(request, response, next){
 	//At this stage user has authorized their password and email
 	//we need give a token!
-
 	var user = request.user;
 	response.send({token: getToken(user)})
 }
